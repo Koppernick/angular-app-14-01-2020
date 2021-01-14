@@ -1,0 +1,20 @@
+<h1>
+  Page d'accueil du Dashboard
+</h1>
+
+<p>
+  Bienvenue {{user.first_name}} {{user.last_name}}
+</p>
+
+<p>Voici les profils qui souhaitent apprendre <span *ngFor="let tag of user.tags"><b>{{tag.name}} </b></span> avec vous :</p>
+
+<div class="match-container">
+  <mat-card *ngFor="let matchedUser of matchs$ | async">
+    <mat-card-header>
+      <mat-card-title>{{matchedUser.first_name}} {{matchedUser.last_name}}</mat-card-title>
+      <mat-card-subtitle>
+        <span *ngFor="let tag of matchedUser.tags">{{tag.name}} </span>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
