@@ -10,11 +10,12 @@ const routes: Routes = [
   {
     path: 'dash',
     canActivate: [CanActivateGuard],
+    data: { admin: true },
     loadChildren: () => import('./dash/dash.module').then(mod => mod.DashModule),
   },
   {
     path: '**',
-    redirectTo: '/auth/signin'
+    redirectTo: '/auth/landing'
   }
 ];
 

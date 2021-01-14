@@ -5,7 +5,7 @@
   <app-lastname-form-field [parentFormGroup]="userForm"></app-lastname-form-field>
   <mat-form-field appearance="legacy">
     <mat-label>Domaines d'apprentissage</mat-label>
-    <mat-select formControlName="tags" multiple>
+    <mat-select [compareWith]="compareIds" formControlName="tags" multiple>
       <mat-option *ngFor="let tag of (tags$ | async)" [value]="tag">{{tag.name}}</mat-option>
     </mat-select>
   </mat-form-field>

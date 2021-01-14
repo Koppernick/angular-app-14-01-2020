@@ -6,6 +6,7 @@ import { User } from '../entities/user';
 import { environment} from '../../../environments/environment';
 import {tap} from 'rxjs/operators';
 import {SessionService} from './session.service';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
 
   constructor(
     private httpClient: HttpClient,
-    private sessionService: SessionService
+    private sessionService: SessionService,
   ) { }
 
   static get isSignedIn(): boolean {
