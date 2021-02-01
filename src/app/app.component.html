@@ -18,6 +18,9 @@
     <button *ngIf="isSignedIn" (click)="signout()" mat-menu-item>
       <span>Se déconnecter</span>
     </button>
+    <button *ngIf="isSignedIn" routerLink="/admin/home" mat-menu-item>
+      <span>Administration</span>
+    </button>
 
   </mat-menu>
 </nav>

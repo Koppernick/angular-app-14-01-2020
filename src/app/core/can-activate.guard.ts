@@ -45,7 +45,7 @@ export class CanActivateGuard implements CanActivate {
           }
         } else {
           if( !response.roles.includes('ROLE_ADMIN') &&  'admin' in next.data){
-            this.router.navigate(['/auth/signin']);
+            this.router.navigate(['/dash/home']);
             this.snackBar.open("Impossible d'acceder a cette page car vous n'ètes pas admin", null,{
               duration: 2000,
             })
